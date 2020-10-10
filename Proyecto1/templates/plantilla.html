@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+</head>
+<body>
+    <h3>Hola {{ nombre }}!</h3>
+    <p><i>Etiquetas</i>: </p>
+
+	{# Esto es un comentario #}
+
+	{% comment %}
+		Esto es un comentario de varias lineas.
+	{% endcomment %}
+
+	<p> Tipo de usuario: 
+	{% if nombre == 'Momantai'  %}
+		Administrador
+	{% else %}
+		Usuario
+	{% endif %}
+	</p>
+    <ul>
+        {% for item in tags %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+
+	<p>Utilizando Filtros</p>
+	{{ nombre | first  | lower }}
+</body>
+</html>
